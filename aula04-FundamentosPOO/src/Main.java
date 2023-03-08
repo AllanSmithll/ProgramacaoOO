@@ -18,6 +18,8 @@ public class Main {
 		
 		Retangulo r4 = new Retangulo(1, 3, 5);
 		System.out.println(r4.isQuadrado());
+
+		System.out.println(r);
 	}
 
 }
