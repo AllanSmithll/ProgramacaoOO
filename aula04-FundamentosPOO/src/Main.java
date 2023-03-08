@@ -1,6 +1,7 @@
 // 01/02/2023. Rodar todas as outras classes criadas
 //import Retangulo;
 //import Matricula;
+//import Conta
 
 public class Main {
 
@@ -32,7 +33,17 @@ public class Main {
 		System.out.println(matricula.getCodidoCursoString()); // Código do curso
 
 		System.out.println(matricula.getSequenciaString()); // Sequência
-	}
 
+		// Outro exemplo, agora com Matrícula
+		System.out.println("Teste com Matrícula");
+		Conta conta1 = new Conta("101","123456");
+		conta1.creditar(300.0);
+		System.out.println("Saldo da conta 1 antes da transferência: " + conta1.getSaldo());
+
+		Conta conta2 = new Conta("102", "654321");
+		conta1.transferir(100, conta2);
+		System.out.println("Depois da tranferência: " + conta1.getSaldo());
+		System.out.println("Conta 2: " + conta2.getSaldo());
+	}
 }
 
