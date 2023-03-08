@@ -1,6 +1,7 @@
 import Exercicio1e2.Retangulo;
 import Exercicio1e2.Triangulo;
 import Exercicio3.Aluno;
+import Exercicio4Conta.Conta;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,5 +20,12 @@ public class Main {
         // Terceiro Exercício
         Aluno a1 = new Aluno("Allan", 100, 70) ;
         System.out.println(a1.getNome()+ "\n" + a1.getMedia() + "\n" + a1.getSituacao());
+
+        // Quarto Exercício
+        Conta conta1 = new Conta("333","123456");
+        conta1.creditar(300.0);
+        conta1.debitar(200.0);
+        conta1.debitar(100.0);
+        System.out.println(conta1.vazia());
     }
 }

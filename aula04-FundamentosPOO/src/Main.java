@@ -41,6 +41,7 @@ public class Main {
 		System.out.println("Saldo da conta 1 antes da transferência: " + conta1.getSaldo());
 
 		Conta conta2 = new Conta("102", "654321");
+		System.out.println("A conta está vazia? " + conta2.vazia());
 		conta1.transferir(100, conta2);
 		System.out.println("Depois da tranferência: " + conta1.getSaldo());
 		System.out.println("Conta 2: " + conta2.getSaldo());
