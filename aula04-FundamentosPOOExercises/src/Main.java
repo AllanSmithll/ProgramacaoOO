@@ -1,7 +1,7 @@
 import Exercicio1e2.Retangulo;
 import Exercicio1e2.Triangulo;
 import Exercicio3.Aluno;
-import Exercicio4Conta.Conta;
+import Exercicio4e5.Conta;
 
 public class Main {
     public static void main(String[] args) {
