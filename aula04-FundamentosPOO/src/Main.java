@@ -1,17 +1,18 @@
 // 01/02/2023. Rodar todas as outras classes criadas
-// import Retangulo;
+//import Retangulo;
+//import Matricula;
 
 public class Main {
 
 	public static void main(String[] args) {
+
+		// Exemplo 1 com retângulo
+		System.out.println("Teste com Retângulo:");
 		Retangulo r = new Retangulo(1, 1.2, 1.5);
-		r.id = 1;
-		r.comprimento = 18;
-		r.largura = 10;
 		System.out.println(r.calcularArea());
 		
 		Retangulo r2 = new Retangulo(1,2.5,5.3);
-		System.out.println(r2.comprimento);
+		System.out.println(r2.getComprimento());
 		
 		double r3 = new Retangulo(1, 2, 4).calcularArea();
 		System.out.println(r3);
@@ -20,6 +21,17 @@ public class Main {
 		System.out.println(r4.isQuadrado());
 
 		System.out.println(r);
+		System.out.println();
+
+		// Outro exemplo, agora com Matrícula
+		System.out.println("Teste com Matrícula");
+		Matricula matricula = new Matricula("20221370030");
+
+		System.out.println(matricula.getAnoString()); // Retorna a substring Ano da matrícula
+		System.out.println(matricula.getPeriodoString()); // Período
+		System.out.println(matricula.getCodidoCursoString()); // Código do curso
+
+		System.out.println(matricula.getSequenciaString()); // Sequência
 	}
 
 }

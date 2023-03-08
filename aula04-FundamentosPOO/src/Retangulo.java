@@ -3,9 +3,9 @@
 import java.util.Objects;
 
 public class Retangulo {
-	public int id; // TODOS OS VALORES COMEÇAM COM 0
-	public double largura;
-	public double comprimento;
+	private int id; // TODOS OS VALORES COMEÇAM COM 0
+	private double largura;
+	private double comprimento;
 	
 	public Retangulo(int id, double largura, double comprimento) {
 		super();
@@ -19,6 +19,14 @@ public class Retangulo {
 	public double calcularArea() {
 		return largura * comprimento;
 	}
+
+	// métodos get e set	
+	public double getId() { return this.id; }
+	public double getLargura() { return this.largura; }
+	public double getComprimento() { return this.comprimento; }
+	public void setId(int id) { this.id = id;}
+	public void setLargura(double largura) { this.largura = largura;}
+	public void setComprimento(double comprimento) { this.comprimento = comprimento;}
 
 	// Método void não tem retorno
 	public void enquadrar() {
@@ -41,6 +49,7 @@ public class Retangulo {
 			return false;
 	}
 
+	// multiplicar o tamanho do retangulo
 	public void resimensionar(double valor) {
 		largura *= valor;
 		comprimento *= valor;
@@ -56,6 +65,7 @@ public class Retangulo {
 		return Objects.hash(comprimento, id, largura);
 	}
 
+	// String das propriedades
 	public String toString() {
 		return "Retangulo [id = " + id + ", largura = " + largura + ", comprimento = " + comprimento + "]";
 	}
