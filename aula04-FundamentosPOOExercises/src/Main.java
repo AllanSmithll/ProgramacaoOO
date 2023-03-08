@@ -1,5 +1,6 @@
 import Exercicio1e2.Retangulo;
 import Exercicio1e2.Triangulo;
+import Exercicio3.Aluno;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,5 +15,9 @@ public class Main {
 
         System.out.println(t.calcularArea() + "m²");
         System.out.println(t);
+
+        // Terceiro Exercício
+        Aluno a1 = new Aluno("Allan", 100, 70) ;
+        System.out.println(a1.getNome()+ "\n" + a1.getMedia() + "\n" + a1.getSituacao());
     }
 }
