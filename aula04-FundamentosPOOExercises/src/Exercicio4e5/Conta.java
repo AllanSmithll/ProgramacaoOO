@@ -42,7 +42,4 @@ public class Conta {
         destino.creditar(valor);
     }
 
-    public Object clonar() {
-        Conta con
-    }
 }

@@ -2,6 +2,7 @@ import Exercicio1e2.Retangulo;
 import Exercicio1e2.Triangulo;
 import Exercicio3.Aluno;
 import Exercicio4e5.Conta;
+import Exercicio6.AlunoFlex;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,5 +29,13 @@ public class Main {
         conta1.debitar(200.0);
         conta1.debitar(100.0);
         System.out.println(conta1.vazia());
+
+        // Sexto Exercício
+        AlunoFlex aFlex1 = new AlunoFlex("Allan", 100, 70) ;
+		AlunoFlex aFlex2 = new AlunoFlex("João", 90, 50, 70, 80) ;
+		AlunoFlex aFlex3 = new AlunoFlex("Anderson");
+		System.out.println(aFlex1.getNome() + ", " + aFlex1.getMedia() + ", " + aFlex1.getSituacao());
+		System.out.println(aFlex2.getNome() + ", " + aFlex2.getMedia() + ", " + aFlex2.getSituacao());
+		System.out.println(aFlex3);
     }
 }
