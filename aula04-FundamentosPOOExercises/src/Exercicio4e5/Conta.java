@@ -23,6 +23,11 @@ public class Conta {
             return false;
     }
 
+    public void creditar(double valor) {
+        // Apenas para sobrecarga
+        saldo += valor;
+    }
+
     public void creditar(double... lista) { // para receber vários valores como argumento, colocar "tipo..."
         for(double valor : lista) // valor recebe uma lista de valores do argumento
             saldo = saldo + valor;
@@ -35,5 +40,9 @@ public class Conta {
     public void transferir(double valor, Conta destino) {
         this.debitar(valor);
         destino.creditar(valor);
+    }
+
+    public Object clonar() {
+        Conta con
     }
 }
