@@ -1,28 +1,23 @@
 // 01/02/2023
-// Classe triangulo criada em sala de aula
+// Classe retangulo criada em sala de aula
 package Exercicio1e2;
 
-import java.util.Objects;
-
 public class Retangulo {
-	public double Medidas;
+	public double largura;
+	public double comprimento;
 	
 	public Retangulo(double medidas) {
 		super();
-        this.Medidas = medidas;
-	}
-
-    @Override
-	public int hashCode() {
-		return Objects.hash(Medidas);
+        this.comprimento = medidas;
+		this.largura = medidas;
 	}
 
 	public String toString() {
-		return "Retangulo [Medidas=" + Medidas + "]";
+		return "Retangulo [Largura=" + largura + "Comprimento=" + comprimento + "]";
 	}
 	
 	public double calcularArea() {
-		return Medidas*2;
+		return largura * comprimento;
 	}
 
 	// public void enquadrar() {
@@ -34,7 +29,7 @@ public class Retangulo {
 	}
 	
     public double calcularPerimetro() {
-        return (4*Medidas);
+        return (2*largura) + (2*comprimento);
     }
 
  }
