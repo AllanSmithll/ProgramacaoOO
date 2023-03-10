@@ -3,7 +3,6 @@ package vendaProduto;
 // import vendaProduto.Produto;
 
 public class Venda {
-    Produto product;
     private String data;
     private String nome;
     private int quantidade;
