@@ -16,14 +16,13 @@ public class Produto {
     public void setNome(String nome) { this.nome = nome; }
 
     public int getEstoque() { return estoque; }
-    public void setEstoque(int estoque) { this.estoque = estoque; }
 
     public double getPreco() { return preco; }
     public void setPreco(double preco) { this.preco = preco; }
 
-    public void venderProduto(int quantidadeProduto) {
-        this.estoque -= quantidadeProduto;
-    }
+    public void aumentarEstoque(int quantidadeProduto) { this.estoque += quantidadeProduto; }
+
+    public void diminuirEstoque(int quantidadeProduto) { this.estoque -= quantidadeProduto; }
 
     @Override
     public String toString() {

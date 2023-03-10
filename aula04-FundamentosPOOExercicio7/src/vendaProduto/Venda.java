@@ -15,7 +15,7 @@ public class Venda {
         this.nome = produto.getNome();
         this.valorVenda = produto.getPreco() * quant;
         this.precoUnico = produto.getPreco();
-        produto.venderProduto(quant);
+        produto.diminuirEstoque(quant);
     }
 
     @Override
