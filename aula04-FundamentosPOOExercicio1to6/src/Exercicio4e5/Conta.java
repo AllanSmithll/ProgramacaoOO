@@ -16,11 +16,7 @@ public class Conta {
     public double getSaldo() { return this.saldo; }
 
     public boolean vazia() {
-        // A conta está vazia?
-        if (this.saldo == 0)
-            return true;
-        else
-            return false;
+        return saldo==0;
     }
 
     public void creditar(double valor) {
@@ -41,5 +37,10 @@ public class Conta {
         this.debitar(valor);
         destino.creditar(valor);
     }
-
+    
+    public Conta clonar() {
+        Conta novaconta = new Conta(this.numero, this.cpf);
+        novaconta.creditar(this.getSaldo());
+        return novaconta;
+    }
 }
