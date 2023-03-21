@@ -22,7 +22,7 @@ public class Main {
         Aluno a1 = new Aluno("Allan", 90.0, 70) ;
         System.out.println(a1.getNome()+ "\n" + a1.getMedia() + "\n" + a1.getSituacao());
 
-        // Quarto Exercício
+        // Quarto Exercício e Quinto Exercício
         Conta conta1 = new Conta("333","123456");
         System.out.println();
         conta1.creditar(300.0);
