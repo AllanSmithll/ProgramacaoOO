@@ -1,5 +1,5 @@
 //20/03/2023
-
+package conta;
 public class Conta {
     private String numero;
     private String cpf;
