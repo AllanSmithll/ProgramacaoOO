@@ -4,10 +4,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 import classes.Aluno;
+import classes.Pilha;
 
 public class Testes {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		
 		// ArrayList
 		ArrayList<Integer> numeros = new ArrayList<>();
 		ArrayList<String> nomes = new ArrayList<>() ;
@@ -66,20 +68,49 @@ public class Testes {
 		familia.addAll(filhos) ; //copia as referências
 		System.out.println(familia.get(0)); //joao
 		System.out.println(familia.get(3)); //paulo
+		System.out.println("Antes do clear: "+ filhos);
 		
 		// Método clear()
 		pais.clear();
 		filhos.clear();
+		System.out.println("Depois do clear: " + filhos);
 		
 		// LinkedList
 		LinkedList<String> nomes2 = new LinkedList<>();
-		nomes2.add("b");
-		System.out.println(nomes2.get(0)); // b
+		nomes2.add("joao");
+		nomes2.add("maria");
+		nomes2.add("jose");
+		System.out.println(nomes2.get(0));
 		
 		// Collections
-		Collections.shuffle(nomes); // embaralha lista
-		//Collections.copy(filhos, familia); // copia lista
+		Collections.shuffle(nomes2); // embaralha lista
+		// Collections.copy(filhos, familia); // copia lista
 		Collections.sort(pais); // ordena a lista
+		System.out.println(nomes2);
+		
+		// Pilha
+		System.out.println("Teste com Pilha:");
+		Pilha<String> p1 = new Pilha<>();
+		p1.push("joao");
+		p1.push("maria");
+		p1.push("jose");
+		System.out.println("topo="+p1.top()); //jose
+		p1.pop(); //desempilha jose
+		p1.pop(); //desempilha maria
+		System.out.println("topo="+p1.top());//joao
+		
+		try {
+			Pilha<String> p2 = new Pilha<>(); //pilha vazia
+			p2.pop();
+			} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		// TÓPICOS ESPECIAIS
+		// Copiar Referências
+		// ArrayList<Integer> numeros = new ArrayList<>(Arrays.asList(10,5,20,-2));
+
+		// ArrayList<String> nomes = new ArrayList<>(Arrays.asList(arraynomes));
 	}
 
 }
