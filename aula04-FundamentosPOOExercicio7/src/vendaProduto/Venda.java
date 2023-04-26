@@ -1,6 +1,5 @@
 // 09/03/2023
 package vendaProduto;
-// import vendaProduto.Produto;
 
 public class Venda {
     private String data;

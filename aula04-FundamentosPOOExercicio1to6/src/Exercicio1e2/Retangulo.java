@@ -6,10 +6,10 @@ public class Retangulo {
 	public double largura;
 	public double comprimento;
 	
-	public Retangulo(double medidas) {
+	public Retangulo(double lar, double compr) {
 		super();
-        this.comprimento = medidas;
-		this.largura = medidas;
+        this.comprimento = lar;
+		this.largura = compr;
 	}
 
 	public String toString() {

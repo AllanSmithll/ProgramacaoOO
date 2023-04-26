@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Primeiro Exercício
-        Retangulo r = new Retangulo(5);
+        Retangulo r = new Retangulo(5, 10);
 
         System.out.println(r.calcularPerimetro() + "m²");
 
