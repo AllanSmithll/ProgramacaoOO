@@ -1,0 +1,167 @@
+/*
+ * 12/04/2023 - exercício de Retângulo
+ */
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+import classesUteis.Retangulo;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
+
+public class RetanguloGrafico {
+
+	private JFrame frmRetngulo;
+	private Retangulo r;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RetanguloGrafico window = new RetanguloGrafico();
+					window.frmRetngulo.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public RetanguloGrafico() {
+		initialize();
+	}
+
+	private void initialize() {
+		frmRetngulo = new JFrame();
+		frmRetngulo.setTitle("Retângulo");
+		frmRetngulo.setBounds(100, 100, 471, 255);
+		frmRetngulo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmRetngulo.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("ID:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel.setBounds(10, 10, 45, 13);
+		frmRetngulo.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Altura:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_1.setBounds(10, 40, 45, 13);
+		frmRetngulo.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Comprimento:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_2.setBounds(10, 70, 96, 18);
+		frmRetngulo.getContentPane().add(lblNewLabel_2);
+		
+		JLabel mensagem = new JLabel("");
+		mensagem.setFont(new Font("Tahoma", Font.BOLD, 11));
+		mensagem.setBounds(10, 187, 245, 21);
+		frmRetngulo.getContentPane().add(mensagem);
+		
+		textField = new JTextField();
+		textField.setBounds(110, 39, 96, 19);
+		frmRetngulo.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(110, 9, 96, 19);
+		frmRetngulo.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(110, 72, 96, 19);
+		frmRetngulo.getContentPane().add(textField_2);
+		textField_2.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Criar");
+		btnNewButton.setBackground(SystemColor.activeCaption);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(textField.getText().isEmpty() || textField_1.getText().isEmpty() 
+					|| textField_2.getText().isEmpty()) {
+					mensagem.setText("Campo vazio");
+					return;
+				}
+				int id = Integer.parseInt(textField.getText());
+				double altura = Double.parseDouble(textField_1.getText());
+				double comprimento = Double.parseDouble(textField_2.getText());
+				r = new Retangulo(id, altura, comprimento);
+				mensagem.setText("Retângulo criado com sucesso!");
+			}
+		});
+		btnNewButton.setBounds(10, 98, 85, 28);
+		frmRetngulo.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Limpar");
+		btnNewButton_1.setBackground(SystemColor.activeCaption);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+			}
+		});
+		btnNewButton_1.setBounds(120, 98, 85, 28);
+		frmRetngulo.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Exibir");
+		btnNewButton_2.setBackground(SystemColor.activeCaption);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(r==null)
+					mensagem.setText("Crie um retângulo primeiro!");
+				else {
+					mensagem.setText(r.toString());
+				}
+			}
+		});
+		btnNewButton_2.setBounds(310, 38, 118, 37);
+		frmRetngulo.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Enquadrar");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(r==null)
+					mensagem.setText("Crie um retângulo primeiro!");
+				else {
+					r.enquadrar();
+					mensagem.setText("Retângulo enquadrado com sucesso!");
+				}
+		}});
+		btnNewButton_3.setBackground(SystemColor.activeCaption);
+		btnNewButton_3.setBounds(310, 94, 118, 37);
+		frmRetngulo.getContentPane().add(btnNewButton_3);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(320, 193, 96, 19);
+		frmRetngulo.getContentPane().add(textField_3);
+		textField_3.setColumns(10);
+		
+		JButton btnNewButton_4 = new JButton("Redimensionar");
+		btnNewButton_4.setBackground(SystemColor.activeCaption);
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(r==null)
+					mensagem.setText("Crie um retângulo primeiro");
+				else {
+					r.resimensionar(Double.parseDouble(textField_3.getText()));
+					mensagem.setText("Retângulo redimensionado com sucesso!");
+				}
+			}
+		});
+		btnNewButton_4.setBounds(310, 146, 118, 37);
+		frmRetngulo.getContentPane().add(btnNewButton_4);
+	}
+}
