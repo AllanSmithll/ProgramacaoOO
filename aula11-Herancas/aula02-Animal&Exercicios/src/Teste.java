@@ -46,6 +46,31 @@ public class Teste {
 				cont++;
 		}
 		System.out.println( cont ); //2
+
+		// Casting de Objetos
+		// criar uma lista de gatos
+		Animal a1 = new Cachorro("rex", 5);
+		Cachorro c1 = (Cachorro) a1; //ok
+		System.out.println("c1: "+c1);
+		
+		ArrayList<Gato> gatos = new ArrayList<>();
+		for(Animal a : animais) {
+			if(a instanceof Gato g) {
+				gatos.add(g);
+			}
+		}
+		
+		System.out.println(gatos);
+		
+		// criar uma lista de gatos saltadores
+		ArrayList<Gato> saltadores = new ArrayList<>();
+		for(Animal a : animais) {
+			if(a instanceof Gato g && g.getSalto()>=5) {
+				saltadores.add(g);
+			}
+		}
+		
+		System.out.println(saltadores); // fifi
 	}
 
 }
