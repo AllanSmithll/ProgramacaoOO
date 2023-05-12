@@ -14,6 +14,7 @@ public class Teste {
 		System.out.println(fifi.toString()); //”fifi 5 miau”
 		System.out.println(juju.toString()); //"juju 30 beehhh
 		
+		// Teste veterinário
 		System.out.println( bob.aplicarInjecao(fifi) ) ;
 		System.out.println( bob.aplicarInjecao(rex) );
 		System.out.println(amanda.aplicarInjecao(juju));
