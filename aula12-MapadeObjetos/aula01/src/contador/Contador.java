@@ -19,4 +19,12 @@ public class Contador {
         int totalOcorrencias = contadores.get(chave);
         return totalOcorrencias;
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((contadores == null) ? 0 : contadores.hashCode());
+        return result;
+    }
 }

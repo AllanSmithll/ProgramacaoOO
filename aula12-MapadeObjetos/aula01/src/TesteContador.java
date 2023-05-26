@@ -11,5 +11,7 @@ public class TesteContador {
         System.out.println("Total de joao: " + c1.totalizar("joao")); // 3
         System.out.println("Total de maria: " + c1.totalizar("maria")); // 2
         System.out.println("Total de jose: " + c1.totalizar("jose")); // 0
+        System.out.println("joao".hashCode());
+        System.out.println("maria".hashCode());
     }
 }
