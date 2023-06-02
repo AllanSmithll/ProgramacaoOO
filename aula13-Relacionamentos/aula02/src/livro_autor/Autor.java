@@ -41,8 +41,18 @@ public class Autor {
 		this.livros = livros;
 	}
 
-	@Override
 	public String toString() {
-		return "Autor [nome=" + nome + ", livros=" + this.getLivros() + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("Autor [nome=").append(nome).append(", livros=");
+		
+		// Adiciona o título de cada livro na representação em string
+		ArrayList<String> titulosLivros = new ArrayList<>();
+		for (Livro livro : livros) {
+			titulosLivros.add(livro.getTitulo());
+		}
+		sb.append(titulosLivros);
+		
+		sb.append("]");
+		return sb.toString();
 	}
 }

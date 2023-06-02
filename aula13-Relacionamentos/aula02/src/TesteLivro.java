@@ -15,8 +15,8 @@ public class TesteLivro {
 		//transferir autor “joao”
 		Autor a = java.localizar("joao");
 		if(a!=null){
-			java.remover(a); php.adicionar(a);
-			a.remover(java); a.adicionar(php);
+			java.remover(a); 
+			php.adicionar(a);
 		}
 		
 		System.out.println(java);
