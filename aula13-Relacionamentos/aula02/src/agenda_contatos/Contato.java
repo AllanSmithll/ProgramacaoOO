@@ -47,6 +47,15 @@ public class Contato {
             System.out.println(telefone);
         }
     }
+    
+    public String localizar(String dddNum) {
+    	for(Telefone fone : telefones) {
+    		if(fone.getDdd() + fone.getNumero().equals(dddNum) != null) {
+    			return fone.toString();
+    		}
+    	}
+		return "-1";
+    }
 
     public String toString() {
         return "Contato [nome=" + nome + ", logradouro=" + logradouro + ", telefones=" + telefones + "]";
