@@ -39,10 +39,6 @@ public class Livro {
 		return autores;
 	}
 
-	public void setAutores(ArrayList<Autor> autores) {
-		this.autores = autores;
-	}
-
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();

@@ -31,5 +31,8 @@ public class TesteCarro {
 		// Novos Motoristas
 		carro1.setMotorista(new Motorista("4444"));
 		carro2.setMotorista(new Motorista("5555"));
+
+		System.out.println("Carro 1: "+carro1);
+		System.out.println("Carro 2: "+carro2);
 	}
 }
